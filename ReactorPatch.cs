@@ -45,8 +45,7 @@ public static class ReactorOverdriveConfigure
         __result.EnableTag("CONFIGURE_TAG");
         __result.onConfigureSlotItemFunc += (GameItem self, GameInventory _, SlotMarker _) =>
         {
-            bool currentState = ReactorOverdriveState.IsOverdriveEnabled(self);
-            ReactorOverdriveState.SetOverdrive(self, !currentState);
+            ReactorOverdriveUI.OpenOverdriveWindow(self);
         };
         __result.onSlotAddItemFunc += (GameItem self, GameInventory _, SlotMarker _) =>
         {
