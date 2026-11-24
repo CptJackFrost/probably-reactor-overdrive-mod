@@ -22,6 +22,7 @@ namespace makeshift_reactor_overdrive
             Manifest = manifest;
             Log = new ModLog(manifest);
             Log.Log($"{manifest.Name} v{manifest.ModVersion} loaded.");
+            ReactorOverdriveConfig.RegisterSettings(manifest.ID);
         }
 
         public void OnEnable()

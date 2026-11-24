@@ -8,11 +8,12 @@ public static class ReactorOverdrivePower
 {
     static void Postfix(GameItem reactor, ref int __result)
     {
-        bool overdriveState = ReactorOverdriveState.IsOverdriveEnabled(reactor);
-        
-        if (overdriveState)
+        if (ReactorOverdriveState.IsOverdriveEnabled(reactor))
         {
-            __result *= 2;
+            int powerMultiplier = ReactorOverdriveConfig.PowerMultiplier.Value;
+            int powerBonus = ReactorOverdriveConfig.PowerBonus.Value;
+
+            __result = __result * powerMultiplier + powerBonus;
         }
     }
 }
@@ -24,12 +25,11 @@ public static class ReactorOverdrivePower
 public static class ReactorOverdriveDecay
 {
     static void Postfix(GameItem reactor, ref int __result)
-    {
-        bool overdriveState = ReactorOverdriveState.IsOverdriveEnabled(reactor);
-        
-        if (overdriveState)
+    {   
+        if (ReactorOverdriveState.IsOverdriveEnabled(reactor))
         {
-            __result += 10;
+            int extraDecay = ReactorOverdriveConfig.ExtraDecay.Value;
+            __result = __result + extraDecay;
         }
     }
 }
