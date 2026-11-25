@@ -6,11 +6,18 @@ public static class ReactorOverdriveUI
 
         if (CustomUIManager.Instance != null)
         {
-            CustomUIManager.Window("makeshift_reactor_overdrive.settings", "Overdrive mode", CustomUIManager.LAYER_PAPER)
+            CustomUIManager.Window("makeshift_reactor_overdrive.settings",
+                ModHelper.GetLocalized(
+                    "makeshift_reactor_overdrive",
+                    "overdrive_window_title"), 
+                CustomUIManager.LAYER_PAPER)
                 .UseMachineryStyle()
                 .SetSize(350, 100)
                 .SetDraggable(true)
-                .AddToggle("Enable overdrive", isOverdriveOn, v => ReactorOverdriveState.SetOverdrive(reactor, v))
+                .AddToggle(ModHelper.GetLocalized(
+                    "makeshift_reactor_overdrive",
+                    "overdrive_enable"), 
+                    isOverdriveOn, v => ReactorOverdriveState.SetOverdrive(reactor, v))
                 .Show();
         }
         

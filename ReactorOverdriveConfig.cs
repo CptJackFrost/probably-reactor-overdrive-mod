@@ -12,7 +12,7 @@ public static class ReactorOverdriveConfig
             "power_multiplier",
             2,
             "Reactor",
-            () => "Power multiplier",
+            () => ModHelper.GetLocalized("makeshift_reactor_overdrive", "config_power_multiplier"),
             min: 1,
             max: 5
         );
@@ -21,7 +21,7 @@ public static class ReactorOverdriveConfig
             "power_bonus",
             0,
             "Reactor",
-            () => "Power bonus",
+            () => ModHelper.GetLocalized("makeshift_reactor_overdrive", "config_power_bonus"),
             min: 0,
             max: 10
         );
@@ -30,7 +30,7 @@ public static class ReactorOverdriveConfig
             "extra_decay",
             10,
             "Reactor",
-            () => "Extra decay",
+            () => ModHelper.GetLocalized("makeshift_reactor_overdrive", "config_extra_decay"),
             min: 0,
             max: 40
         );

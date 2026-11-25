@@ -41,7 +41,9 @@
   <Target Name="InstallMod" AfterTargets="Build">
     <MakeDir Directories="$(ModInstallDir)" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModInstallDir)" />
-    <Copy SourceFiles="@(ModFile)" DestinationFiles="@(ModFile->'$(ModInstallDir)\%(RecursiveDir)%(Filename)%(Extension)')" Condition="Exists('%(ModFile.FullPath)')" />
+    <Copy SourceFiles="@(ModFile)"
+      DestinationFiles="@(ModFile->'$(ModInstallDir)\%(Identity)')"
+      Condition="Exists('%(ModFile.FullPath)')" />
     <Message Importance="high" Text="Installed into $(ModInstallDir)" />
   </Target>
 

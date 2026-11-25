@@ -3,8 +3,11 @@
   <ID>makeshift_reactor_overdrive</ID>
   <Name>Reactor overdrive</Name>
   <Author>CptJackFrost</Author>
-  <ModVersion>1.0</ModVersion>
-  <Description>Switchable overdrive mode for a makeshift nuclear reactor</Description>
+  <ModVersion>1.0.0</ModVersion>
+  <Description>
+  Adds an overdrive mode to the Makeshift Nuclear Reactor, boosting its power output at the cost of increased integrity loss. Power multiplier, bonus output, and additional wear can be customized in the mod settings. 
+  
+  Добавляет самодельному ядерному реактору режим форсирования, увеличивающий выработку энергии ценой ускоренного износа. Множитель мощности, дополнительную выработку и износ можно настроить в параметрах мода.</Description>
   <GameVersions />
   <Prerequisites />
   <!-- Every DLL the game must load, relative to this folder. Nothing else in the folder is loaded. -->
